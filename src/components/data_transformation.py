@@ -99,8 +99,8 @@ class DataTransformation:
             test_data_preprocessed=processing_object.transform(input_feature_test_df)
 
 
-            train_data=np.c_[train_data_preprocessed,np.array(target_feature_train_df)]
-            test_data=np.c_[test_data_preprocessed,np.array(target_feature_test_df)]
+            train_data_array=np.c_[train_data_preprocessed,np.array(target_feature_train_df)]
+            test_data_array=np.c_[test_data_preprocessed,np.array(target_feature_test_df)]
 
 
             logging.info("Completed data transformation")
@@ -112,8 +112,8 @@ class DataTransformation:
             )
 
             return (
-                train_data,
-                test_data,
+                train_data_array,
+                test_data_array,
                 self.transformation_config.preprocessor_obj_file_path
             )
 
